@@ -1,0 +1,122 @@
+:root {
+  --primary-color: #4CAF50;
+  --secondary-color: #FFC107;
+  --accent-color: #2196F3;
+  --ttt-bg: #f9fafb;
+  --ttt-border: #e0e0e0;
+  --ttt-board-shadow: 0 6px 32px rgba(33, 150, 243, 0.06);
+  --ttt-card-radius: 18px;
+  --ttt-status-fg: #303030;
+  --ttt-overlay: #ffffffcc;
+  --ttt-border-radius: 8px;
+}
+
+.ttt-container {
+  max-width: 370px;
+  margin: 32px auto 0 auto;
+  padding: 36px 26px 30px 26px;
+  background: var(--ttt-bg);
+  border-radius: var(--ttt-card-radius);
+  box-shadow: var(--ttt-board-shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ttt-title {
+  margin: 0 0 0.25rem 0;
+  font-size: 2.15rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.01em;
+}
+.ttt-accent-dot {
+  font-size: 2rem;
+  color: var(--accent-color);
+  margin-left: 4px;
+  font-weight: 900;
+}
+
+.ttt-status {
+  color: var(--ttt-status-fg);
+  margin: 1.5rem 0 1rem 0;
+  font-size: 1.10rem;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  min-height: 1.8em;
+  text-align: center;
+}
+
+.ttt-board {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  margin-bottom: 1.25rem;
+  user-select: none;
+}
+
+.ttt-board-row {
+  display: flex;
+}
+
+.ttt-square {
+  width: 85px;
+  height: 85px;
+  margin: 0.04rem;
+  background: var(--ttt-overlay);
+  border: 2.5px solid var(--ttt-border);
+  border-radius: var(--ttt-border-radius);
+  box-sizing: border-box;
+  font-size: 2.2rem;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  outline: none;
+  transition: background 0.13s, box-shadow 0.13s, border 0.13s, color 0.13s;
+  color: var(--primary-color);
+  box-shadow: 0 1px 5px #bbb6;
+}
+
+.ttt-square.filled:hover,
+.ttt-square:disabled,
+.ttt-square.filled {
+  background: #f7f7fc;
+  cursor: default;
+  box-shadow: none;
+}
+
+.ttt-square:hover:not(.filled) {
+  background: var(--accent-color);
+  color: #fff;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 3px var(--accent-color);
+}
+
+.ttt-square:nth-child(2) {
+  /* Middle cell of row: add lateral margins for extra visual separation */
+  margin-left: 0.16rem;
+  margin-right: 0.16rem;
+}
+
+.ttt-restart-btn {
+  background: var(--secondary-color);
+  color: #222;
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 26px;
+  box-shadow: 0 1px 4px #ddd;
+  margin-top: 2rem;
+  letter-spacing: .02em;
+  cursor: pointer;
+  transition: background 0.16s;
+}
+.ttt-restart-btn:hover {
+  background: var(--accent-color);
+  color: #fff;
+}
